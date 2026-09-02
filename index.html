@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PostBuild — Gestiona la postventa con IA</title>
+  <meta name="description" content="PostBuild automatiza y resuelve la atención de postventa de viviendas para el propietario final, usando inteligencia artificial.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="is-loading">
+  <header class="navbar">
+    <div class="navbar__brand">
+      <img src="Imagenes/PostBuild_logotipo_fondo_blanco.svg" alt="PostBuild" class="navbar__logo">
+    </div>
+    <nav class="navbar__nav" id="navbar-nav">
+      <a href="#producto">Producto</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#demo" class="navbar__cta navbar__cta--mobile">Agenda demo</a>
+    </nav>
+    <a href="#demo" class="navbar__cta navbar__cta--desktop">Agenda demo</a>
+    <button class="navbar__toggle" id="navbar-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <section class="hero">
+    <div class="hero__content">
+      <h1 class="hero__brand">Post<span class="accent">Build</span></h1>
+      <p class="hero__title">Gestiona la postventa con <span class="accent">IA</span></p>
+      <a href="#demo" class="hero__cta">Agenda demo</a>
+    </div>
+    <div class="hero__media">
+      <img class="hero__photo" src="Imagenes/1.png" alt="Mano sosteniendo una maqueta de casa">
+    </div>
+  </section>
+
+  <section class="solution">
+    <div class="solution__phone">
+      <div class="phone">
+        <div class="phone__notch"></div>
+        <div class="phone__screen" id="chat-screen">
+          <div class="chat-header">
+            <div class="chat-header__avatar">P</div>
+            <div class="chat-header__info">
+              <span class="chat-header__name">PostIA</span>
+              <span class="chat-header__status">En línea</span>
+            </div>
+          </div>
+          <div class="chat-bubble chat-bubble--client" data-step="1">Hola, tengo una filtración en la grifería del baño 🚿</div>
+          <div class="chat-bubble chat-bubble--ai" data-step="2">¡Hola! Para validar tu reclamo, ¿hace cuánto notaste la filtración y es constante o solo al abrir la llave?</div>
+          <div class="chat-bubble chat-bubble--client" data-step="3">La noté hace 2 días, gotea todo el tiempo aunque esté cerrada</div>
+          <div class="chat-bubble chat-bubble--ai" data-step="4">Gracias por el detalle. Tu vivienda tiene 8 meses de entregada, así que estás dentro del período de garantía y esto queda cubierto sin costo ✅</div>
+          <div class="chat-bubble chat-bubble--ai chat-bubble--schedule" data-step="5">
+            <p>Estos son los horarios disponibles:</p>
+            <div class="schedule-card">
+              <button class="schedule-option" data-selected="false">Mar 10 · 15:00 hs</button>
+              <button class="schedule-option" data-selected="true">Mié 11 · 10:00 hs</button>
+              <button class="schedule-option" data-selected="false">Jue 12 · 17:00 hs</button>
+            </div>
+          </div>
+          <div class="chat-bubble chat-bubble--client" data-step="6">Mié 11 · 10:00 hs ✔️</div>
+          <div class="chat-bubble chat-bubble--ai" data-step="7">Listo, tu visita técnica quedó agendada. Un especialista te contactará antes de la hora acordada 👷</div>
+        </div>
+      </div>
+    </div>
+    <div class="solution__content">
+      <span class="solution__eyebrow">Gestión automatizada</span>
+      <h2 class="solution__title">Solo preocúpate en <span class="accent">operar y gestionar</span></h2>
+      <p class="solution__text">Automatizamos todos los reclamos y consultas de tus propietarios mediante inteligencia artificial. Desde la primera conversación hasta la coordinación de la visita técnica, PostBuild gestiona todo el proceso de forma autónoma.</p>
+    </div>
+  </section>
+
+  <section class="ops">
+    <div class="ops__content">
+      <span class="solution__eyebrow">Operación centralizada</span>
+      <h2 class="solution__title">Gestión de equipo <span class="accent">postventa</span></h2>
+      <p class="solution__text">Centralizamos la programación de visitas técnicas y trabajos, la aprobación o rechazo de solicitudes, la asignación de técnicos y el seguimiento hasta el cierre de cada trabajo.</p>
+    </div>
+    <div class="ops__screen-wrap">
+      <div class="tablet-frame">
+        <span class="tablet-frame__camera"></span>
+        <div class="tablet-screen" id="tablet-screen">
+          <div class="calendar-month" id="calendar-month">
+            <div class="calendar-month__header">
+              <span class="calendar-month__title">Marzo</span>
+              <div class="calendar-month__weekdays">
+                <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
+              </div>
+            </div>
+            <div class="calendar-grid" id="calendar-grid"></div>
+          </div>
+          <div class="calendar-day" id="calendar-day">
+            <span class="calendar-day__title" id="calendar-day-title"></span>
+            <div class="calendar-day__visits" id="calendar-day-visits"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="metrics">
+    <div class="metrics__header">
+      <span class="solution__eyebrow">Decisiones basadas en datos</span>
+      <h2 class="solution__title">Toma de decisiones mediante <span class="accent">predicciones con IA</span></h2>
+    </div>
+    <div class="metrics__grid">
+      <div class="metric-card">
+        <span class="metric-card__label">KPIs generales</span>
+        <span class="metric-card__value" data-count-to="94" data-suffix="%">0%</span>
+        <span class="metric-card__desc">Cumplimiento de garantía</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-card__label">Tiempo promedio de respuesta</span>
+        <span class="metric-card__value" data-count-to="3.2" data-decimals="1" data-suffix=" min">0 min</span>
+        <span class="metric-card__desc">Primera respuesta de la IA</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-card__label">Reclamos más habituales</span>
+        <span class="metric-card__value metric-card__value--text">Grifería</span>
+        <span class="metric-card__desc"><span data-count-to="39" data-suffix="%">0%</span> de los reclamos del mes</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-card__label">Predicción de fallas</span>
+        <span class="metric-card__value" data-count-to="27" data-suffix="%" data-prefix="+">0%</span>
+        <span class="metric-card__desc">Detección anticipada vs. mes anterior</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="site-footer__brand">
+      <img src="Imagenes/PostBuild_logotipo_fondo_blanco.svg" alt="PostBuild" class="site-footer__logo">
+      <span class="site-footer__name">Post<span class="accent">Build</span></span>
+    </div>
+    <a href="https://www.linkedin.com/company/postbuild-ia/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="site-footer__social" aria-label="PostBuild en LinkedIn">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/>
+      </svg>
+    </a>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
