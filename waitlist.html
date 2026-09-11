@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de espera — PostBuild</title>
+  <meta name="description" content="Sumate a la lista de espera de PostBuild y sé de los primeros en automatizar la postventa de tus viviendas con IA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="navbar__brand">
+      <a href="index.html">
+        <img src="Imagenes/PostBuild_logotipo_fondo_blanco.svg" alt="PostBuild" class="navbar__logo">
+      </a>
+    </div>
+    <nav class="navbar__nav" id="navbar-nav">
+      <a href="index.html#producto">Producto</a>
+      <a href="index.html#clientes">Clientes</a>
+      <a href="index.html#nosotros">Nosotros</a>
+    </nav>
+    <a href="index.html" class="navbar__cta navbar__cta--desktop">Volver al inicio</a>
+    <button class="navbar__toggle" id="navbar-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <section class="waitlist">
+    <div class="waitlist__card">
+      <span class="waitlist__eyebrow">Acceso anticipado</span>
+      <h1 class="waitlist__title">Sumate a la <span class="accent">lista de espera</span></h1>
+      <p class="waitlist__text">Sé de los primeros en gestionar tu postventa con IA. Sumate ahora y asegurá tu exclusividad.</p>
+
+      <form class="waitlist__form" id="waitlist-form" novalidate>
+        <div class="waitlist__field">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required>
+        </div>
+        <div class="waitlist__field">
+          <label for="empresa">Nombre de empresa</label>
+          <input type="text" id="empresa" name="empresa" autocomplete="organization" required>
+        </div>
+        <div class="waitlist__field">
+          <label for="cargo">Cargo</label>
+          <input type="text" id="cargo" name="cargo" autocomplete="organization-title" required>
+        </div>
+        <div class="waitlist__field">
+          <label for="correo">Correo</label>
+          <input type="email" id="correo" name="correo" autocomplete="email" required>
+        </div>
+        <div class="waitlist__field">
+          <label for="telefono">Número de teléfono</label>
+          <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+        </div>
+
+        <button type="submit" class="waitlist__submit">Unirme a la lista de espera</button>
+      </form>
+
+    </div>
+  </section>
+
+  <div class="waitlist__toast" id="waitlist-success" role="alert" hidden>
+    <svg class="waitlist__toast-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+      <circle cx="12" cy="12" r="11" fill="#1FA855"/>
+      <path d="M7 12.5l3 3 7-7" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="waitlist__toast-text">
+      <span class="waitlist__toast-title">¡Listo!</span>
+      <p>Recibimos tus datos. Te vamos a contactar apenas tengamos un cupo disponible.</p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__brand">
+      <img src="Imagenes/PostBuild_logotipo_fondo_blanco.svg" alt="PostBuild" class="site-footer__logo">
+      <span class="site-footer__name">Post<span class="accent">Build</span></span>
+    </div>
+    <a href="https://www.linkedin.com/company/postbuild-ia/?viewAsMember=true" target="_blank" rel="noopener noreferrer" class="site-footer__social" aria-label="PostBuild en LinkedIn">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/>
+      </svg>
+    </a>
+  </footer>
+
+  <script src="js/waitlist.js" defer></script>
+</body>
+</html>
