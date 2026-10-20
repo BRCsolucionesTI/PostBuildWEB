@@ -7,21 +7,26 @@
   <meta name="description" content="PostBuild automatiza y resuelve la atención de postventa de viviendas para el propietario final, usando inteligencia artificial.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="is-loading">
   <header class="navbar">
     <div class="navbar__brand">
       <img src="Imagenes/PostBuild_logotipo_fondo_blanco.svg" alt="PostBuild" class="navbar__logo">
+      <span class="navbar__name">PostBuild</span>
     </div>
     <nav class="navbar__nav" id="navbar-nav">
       <a href="#producto">Producto</a>
       <a href="#clientes">Clientes</a>
       <a href="#nosotros">Nosotros</a>
+      <a href="#" class="navbar__login navbar__login--mobile">Iniciar sesión</a>
       <a href="waitlist.html" class="navbar__cta navbar__cta--mobile">Lista de espera</a>
     </nav>
-    <a href="waitlist.html" class="navbar__cta navbar__cta--desktop">Lista de espera</a>
+    <div class="navbar__actions navbar__actions--desktop">
+      <a href="#" class="navbar__login">Iniciar sesión</a>
+      <a href="waitlist.html" class="navbar__cta">Lista de espera</a>
+    </div>
     <button class="navbar__toggle" id="navbar-toggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span>
       <span></span>
@@ -31,98 +36,242 @@
 
   <section class="hero">
     <div class="hero__content">
-      <h1 class="hero__brand">Post<span class="accent">Build</span></h1>
-      <p class="hero__title">Gestiona la postventa con <span class="accent">IA</span></p>
-      <a href="waitlist.html" class="hero__cta">Lista de espera</a>
-    </div>
-    <div class="hero__media">
-      <img class="hero__photo" src="Imagenes/1.png" alt="Mano sosteniendo una maqueta de casa">
-    </div>
-  </section>
-
-  <section class="solution">
-    <div class="solution__phone">
-      <div class="phone">
-        <div class="phone__notch"></div>
-        <div class="phone__screen" id="chat-screen">
-          <div class="chat-header">
-            <div class="chat-header__avatar">P</div>
-            <div class="chat-header__info">
-              <span class="chat-header__name">PostIA</span>
-              <span class="chat-header__status">En línea</span>
-            </div>
-          </div>
-          <div class="chat-bubble chat-bubble--client" data-step="1">Hola, tengo una filtración en la grifería del baño 🚿</div>
-          <div class="chat-bubble chat-bubble--ai" data-step="2">¡Hola! Para validar tu reclamo, ¿hace cuánto notaste la filtración y es constante o solo al abrir la llave?</div>
-          <div class="chat-bubble chat-bubble--client" data-step="3">La noté hace 2 días, gotea todo el tiempo aunque esté cerrada</div>
-          <div class="chat-bubble chat-bubble--ai" data-step="4">Gracias por el detalle. Tu vivienda tiene 8 meses de entregada, así que estás dentro del período de garantía y esto queda cubierto sin costo ✅</div>
-          <div class="chat-bubble chat-bubble--ai chat-bubble--schedule" data-step="5">
-            <p>Estos son los horarios disponibles:</p>
-            <div class="schedule-card">
-              <button class="schedule-option" data-selected="false">Mar 10 · 15:00 hs</button>
-              <button class="schedule-option" data-selected="true">Mié 11 · 10:00 hs</button>
-              <button class="schedule-option" data-selected="false">Jue 12 · 17:00 hs</button>
-            </div>
-          </div>
-          <div class="chat-bubble chat-bubble--client" data-step="6">Mié 11 · 10:00 hs ✔️</div>
-          <div class="chat-bubble chat-bubble--ai" data-step="7">Listo, tu visita técnica quedó agendada. Un especialista te contactará antes de la hora acordada 👷</div>
-        </div>
-      </div>
-    </div>
-    <div class="solution__content">
-      <h2 class="solution__title">Solo preocúpate en <span class="accent">operar y gestionar</span></h2>
-      <p class="solution__text">Automatizamos todos los reclamos y consultas de tus propietarios mediante inteligencia artificial. Desde la primera conversación hasta la coordinación de la visita técnica, PostBuild gestiona todo el proceso de forma autónoma.</p>
-    </div>
-  </section>
-
-  <section class="ops">
-    <div class="ops__content">
-      <h2 class="solution__title">Gestión de equipo <span class="accent">postventa</span></h2>
-      <p class="solution__text">Centralizamos la programación de visitas técnicas y trabajos, la aprobación o rechazo de solicitudes, la asignación de técnicos y el seguimiento hasta el cierre de cada trabajo.</p>
-    </div>
-    <div class="ops__screen-wrap">
-      <div class="tablet-frame">
-        <span class="tablet-frame__camera"></span>
-        <div class="tablet-screen" id="tablet-screen">
-          <div class="calendar-month" id="calendar-month">
-            <div class="calendar-month__header">
-              <span class="calendar-month__title">Marzo</span>
-              <div class="calendar-month__weekdays">
-                <span>L</span><span>M</span><span>M</span><span>J</span><span>V</span><span>S</span><span>D</span>
-              </div>
-            </div>
-            <div class="calendar-grid" id="calendar-grid"></div>
-          </div>
-          <div class="calendar-day" id="calendar-day">
-            <span class="calendar-day__title" id="calendar-day-title"></span>
-            <div class="calendar-day__visits" id="calendar-day-visits"></div>
-          </div>
+      <p class="hero__title">Gestiona la atención a tus propietarios con <span class="accent">IA</span></p>
+      <div class="hero__actions">
+        <a href="waitlist.html" class="hero__cta">Lista de espera</a>
+        <a href="#" class="hero__cta hero__cta--secondary">Ver documentación</a>
+        <div class="hero__video" id="hero-video-wrapper">
+          <video src="Imagenes/videopostbuild.mp4" id="hero-video" loop playsinline></video>
+          <button type="button" class="hero__video-toggle is-paused" id="hero-video-toggle" aria-label="Reproducir video">
+            <svg class="hero__video-icon hero__video-icon--pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <rect x="6" y="5" width="4" height="14" rx="1"/>
+              <rect x="14" y="5" width="4" height="14" rx="1"/>
+            </svg>
+            <svg class="hero__video-icon hero__video-icon--play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="metrics">
-    <div class="metrics__header">
-      <h2 class="solution__title">Toma de decisiones mediante <span class="accent">predicciones con IA</span></h2>
+  <section class="about" id="producto">
+    <div class="about__graphic">
+      <span class="about__eyebrow">Qué es <strong>PostBuild</strong></span>
+      <svg viewBox="0 0 400 260" class="building" aria-hidden="true">
+        <g transform="translate(-30,0)">
+        <g>
+          <rect x="30" y="20" width="100" height="220" rx="6" fill="none" stroke="var(--color-dark)" stroke-width="2.5"/>
+          <rect x="30" y="20" width="100" height="8" fill="var(--color-blue)"/>
+          <rect x="55" y="42" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0s"/>
+          <rect x="87" y="42" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.2s"/>
+          <rect x="55" y="74" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.4s"/>
+          <rect x="87" y="74" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.6s"/>
+          <rect x="55" y="106" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.8s"/>
+          <rect x="87" y="106" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:1s"/>
+          <rect x="55" y="138" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:1.2s"/>
+          <rect x="87" y="138" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:1.4s"/>
+          <rect x="65" y="170" width="30" height="70" fill="none" stroke="var(--color-dark)" stroke-width="2.5"/>
+        </g>
+
+        <g>
+          <rect x="180" y="20" width="100" height="220" rx="6" fill="none" stroke="var(--color-dark)" stroke-width="2.5"/>
+          <rect x="180" y="20" width="100" height="8" fill="var(--color-blue)"/>
+          <rect x="205" y="42" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.1s"/>
+          <rect x="237" y="42" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.3s"/>
+          <rect x="205" y="74" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.5s"/>
+          <rect x="237" y="74" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.7s"/>
+          <rect x="205" y="106" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.9s"/>
+          <rect x="237" y="106" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:1.1s"/>
+          <rect x="205" y="138" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:1.3s"/>
+          <rect x="237" y="138" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:1.5s"/>
+          <rect x="215" y="170" width="30" height="70" fill="none" stroke="var(--color-dark)" stroke-width="2.5"/>
+        </g>
+
+        <g>
+          <rect x="330" y="20" width="100" height="220" rx="6" fill="none" stroke="var(--color-dark)" stroke-width="2.5"/>
+          <rect x="330" y="20" width="100" height="8" fill="var(--color-blue)"/>
+          <rect x="355" y="42" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.15s"/>
+          <rect x="387" y="42" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.35s"/>
+          <rect x="355" y="74" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.55s"/>
+          <rect x="387" y="74" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.75s"/>
+          <rect x="355" y="106" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:0.95s"/>
+          <rect x="387" y="106" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:1.15s"/>
+          <rect x="355" y="138" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:1.35s"/>
+          <rect x="387" y="138" width="18" height="18" fill="var(--color-blue)" class="window-blink" style="animation-delay:1.55s"/>
+          <rect x="365" y="170" width="30" height="70" fill="none" stroke="var(--color-dark)" stroke-width="2.5"/>
+        </g>
+        </g>
+      </svg>
     </div>
-    <div class="metrics__grid">
-      <div class="metric-card">
-        <span class="metric-card__value metric-card__value--text">Riesgos futuros</span>
-        <span class="metric-card__desc">Anticipamos qué unidades o instalaciones tienen mayor probabilidad de generar reclamos antes de que ocurran.</span>
+    <div class="about__content">
+      <div class="about__intro-card">
+        <h2 class="about__title">La postventa de tu edificio, resuelta con <span class="accent">IA</span></h2>
+        <p class="about__text">PostBuild conecta a propietarios y equipo de postventa mediante agentes de IA que resuelven cada consulta en tiempo real.</p>
       </div>
-      <div class="metric-card">
-        <span class="metric-card__value metric-card__value--text">Tipo de respuesta</span>
-        <span class="metric-card__desc">La IA sugiere la respuesta más adecuada para cada reclamo según su historial y gravedad.</span>
+      <div class="about__features">
+        <div class="about__feature about__feature--light">
+          <h3 class="about__feature-title">Atención con agentes IA</h3>
+          <p class="about__feature-text">Responden y resuelven cada consulta al instante.</p>
+        </div>
+        <div class="about__feature about__feature--dark">
+          <h3 class="about__feature-title">Equipo postventa y propietarios, conectados</h3>
+          <p class="about__feature-text">Una relación directa, trazable y sin fricciones.</p>
+        </div>
       </div>
-      <div class="metric-card">
-        <span class="metric-card__value metric-card__value--text">Predicción de fallas</span>
-        <span class="metric-card__desc">Detectamos patrones que anticipan fallas recurrentes en grifería, pisos, humedad y otros rubros.</span>
+    </div>
+  </section>
+
+  <section class="ai-support">
+    <div class="ai-support__container">
+    <h2 class="intro-banner__title">Ten el mejor servicio de postventa y <strong class="intro-banner__highlight">relación con tus propietarios</strong></h2>
+    <div class="ai-support__cards">
+    <div class="ai-support__column">
+    <div class="ai-support__content">
+    <div class="ai-support__marquee" aria-hidden="true">
+      <div class="ai-support__track">
+        <div class="ai-support__icon-set">
+          <svg class="ai-support__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="15" r="7" stroke="var(--color-dark)" stroke-width="2.5"/>
+            <path d="M10 40c0-8 6-13 14-13s14 5 14 13" stroke="var(--color-dark)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <svg class="ai-support__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="6" width="24" height="38" rx="2" stroke="var(--color-blue)" stroke-width="2.5"/>
+            <rect x="17" y="12" width="5" height="5" fill="var(--color-blue)"/>
+            <rect x="26" y="12" width="5" height="5" fill="var(--color-blue)"/>
+            <rect x="17" y="21" width="5" height="5" fill="var(--color-blue)"/>
+            <rect x="26" y="21" width="5" height="5" fill="var(--color-blue)"/>
+            <rect x="19" y="34" width="10" height="10" stroke="var(--color-blue)" stroke-width="2"/>
+          </svg>
+          <svg class="ai-support__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 5l5.9 12.4 13.6 1.7-10 9.5 2.6 13.5L24 35.6 11.9 42.1l2.6-13.5-10-9.5 13.6-1.7L24 5z" stroke="var(--color-dark)" stroke-width="2.2" stroke-linejoin="round"/>
+          </svg>
+          <svg class="ai-support__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="18" r="10" stroke="var(--color-blue)" stroke-width="2.5"/>
+            <path d="M19 18c1.2 2 3 3 5 3s3.8-1 5-3" stroke="var(--color-blue)" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="20" cy="15" r="1.4" fill="var(--color-blue)"/>
+            <circle cx="28" cy="15" r="1.4" fill="var(--color-blue)"/>
+            <path d="M10 41c0-7.5 6.3-12 14-12s14 4.5 14 12" stroke="var(--color-blue)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="ai-support__icon-set" aria-hidden="true">
+          <svg class="ai-support__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="15" r="7" stroke="var(--color-dark)" stroke-width="2.5"/>
+            <path d="M10 40c0-8 6-13 14-13s14 5 14 13" stroke="var(--color-dark)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          <svg class="ai-support__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="6" width="24" height="38" rx="2" stroke="var(--color-blue)" stroke-width="2.5"/>
+            <rect x="17" y="12" width="5" height="5" fill="var(--color-blue)"/>
+            <rect x="26" y="12" width="5" height="5" fill="var(--color-blue)"/>
+            <rect x="17" y="21" width="5" height="5" fill="var(--color-blue)"/>
+            <rect x="26" y="21" width="5" height="5" fill="var(--color-blue)"/>
+            <rect x="19" y="34" width="10" height="10" stroke="var(--color-blue)" stroke-width="2"/>
+          </svg>
+          <svg class="ai-support__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M24 5l5.9 12.4 13.6 1.7-10 9.5 2.6 13.5L24 35.6 11.9 42.1l2.6-13.5-10-9.5 13.6-1.7L24 5z" stroke="var(--color-dark)" stroke-width="2.2" stroke-linejoin="round"/>
+          </svg>
+          <svg class="ai-support__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="18" r="10" stroke="var(--color-blue)" stroke-width="2.5"/>
+            <path d="M19 18c1.2 2 3 3 5 3s3.8-1 5-3" stroke="var(--color-blue)" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="20" cy="15" r="1.4" fill="var(--color-blue)"/>
+            <circle cx="28" cy="15" r="1.4" fill="var(--color-blue)"/>
+            <path d="M10 41c0-7.5 6.3-12 14-12s14 4.5 14 12" stroke="var(--color-blue)" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
       </div>
-      <div class="metric-card">
-        <span class="metric-card__value metric-card__value--text">Gastos por postventa</span>
-        <span class="metric-card__desc">Proyectamos el costo estimado de la postventa para planificar presupuesto y prioridades.</span>
+    </div>
+    <h2 class="ai-support__title">Tus propietarios, siempre atendidos</h2>
+    <p class="ai-support__text">Los agentes de IA atienden a los propietarios las 24 horas para responder sus consultas, y se encargan de gestionar todos los requerimientos de principio a fin, incluidas las visitas técnicas.</p>
+    </div>
+    <div class="ai-support__content ai-support__content--visits">
+    <div class="ai-support__calendar-graphic" aria-hidden="true">
+      <svg class="ai-support__calendar" viewBox="0 0 200 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="4" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="28" y="4" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="52" y="4" width="20" height="20" fill="var(--color-blue)"/>
+        <rect x="76" y="4" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="100" y="4" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="124" y="4" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="148" y="4" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="172" y="4" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="4" y="28" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="28" y="28" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="52" y="28" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="76" y="28" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="100" y="28" width="20" height="20" fill="var(--color-blue)"/>
+        <rect x="124" y="28" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="148" y="28" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="172" y="28" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="4" y="52" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="28" y="52" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="52" y="52" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="76" y="52" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="100" y="52" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="124" y="52" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="148" y="52" width="20" height="20" fill="#FFFFFF"/>
+        <rect x="172" y="52" width="20" height="20" fill="#FFFFFF"/>
+      </svg>
+    </div>
+    <h2 class="ai-support__title">Visitas en tu calendario</h2>
+    <p class="ai-support__text">Programa y haz seguimiento a las visitas técnicas de postventa y a las visitas de trabajo de tu equipo, todas organizadas en un solo calendario, sin cruces ni tiempos muertos.</p>
+    </div>
+    <div class="ai-support__content ai-support__content--cta">
+      <h2 class="ai-support__title">Listo para empezar</h2>
+      <a href="waitlist.html" class="ai-support__cta-button">Agenda tu demo</a>
+    </div>
+    </div>
+    <div class="ai-support__column ai-support__column--right">
+    <div class="ai-support__content ai-support__content--compact">
+    <div class="ai-support__measure-graphic" aria-hidden="true">
+      <svg class="ai-support__measure-illustration" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+        <rect x="14" y="20" width="76" height="100" rx="6" fill="#FFFFFF" stroke="var(--color-dark)" stroke-width="2.5"/>
+        <rect x="30" y="12" width="44" height="16" rx="3" fill="var(--color-blue)"/>
+        <path class="order-line order-line--1" d="M26 55h44" stroke="var(--color-dark)" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="order-line order-line--2" d="M26 68h44" stroke="var(--color-dark)" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="order-line order-line--3" d="M26 81h30" stroke="var(--color-dark)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="52" cy="102" r="14" fill="#FFFFFF" stroke="var(--color-blue)" stroke-width="2.5"/>
+        <path class="order-check" d="M45.5 102l4.7 4.7L59 97" stroke="var(--color-blue)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+
+        <line x1="118" y1="18" x2="118" y2="132" stroke="#D7E3F5" stroke-width="2"/>
+
+        <path d="M150 115 A55 55 0 0 1 260 115" fill="none" stroke="#D7E3F5" stroke-width="10" stroke-linecap="round"/>
+        <path class="gauge-fill" d="M150 115 A55 55 0 0 1 260 115" fill="none" stroke="var(--color-blue)" stroke-width="10" stroke-linecap="round" pathLength="1"/>
+        <g class="gauge-needle">
+          <line x1="205" y1="115" x2="232" y2="85" stroke="var(--color-dark)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="205" cy="115" r="5.5" fill="var(--color-dark)"/>
+        </g>
+      </svg>
+    </div>
+    <h2 class="ai-support__title">Orden y satisfacción, siempre medidas</h2>
+    <p class="ai-support__text">La plataforma gestiona cada orden de atención y mide la satisfacción del servicio en cada visita.</p>
+    </div>
+    <div class="ai-support__content ai-support__content--integrations">
+      <div class="ai-support__integrations-marquee" aria-hidden="true">
+        <div class="ai-support__integrations-track">
+          <div class="ai-support__integrations-set">
+            <img src="Imagenes/logofin700.png" alt="" class="ai-support__integration-img">
+            <img src="Imagenes/logowsp.png" alt="" class="ai-support__integration-img ai-support__integration-img--wsp">
+            <img src="Imagenes/logosap.png" alt="" class="ai-support__integration-img ai-support__integration-img--sap">
+            <img src="Imagenes/logogoogle.webp" alt="" class="ai-support__integration-img">
+            <img src="Imagenes/logogooglecalendar.png" alt="" class="ai-support__integration-img">
+            <img src="Imagenes/logoout.png" alt="" class="ai-support__integration-img">
+          </div>
+          <div class="ai-support__integrations-set">
+            <img src="Imagenes/logofin700.png" alt="" class="ai-support__integration-img">
+            <img src="Imagenes/logowsp.png" alt="" class="ai-support__integration-img ai-support__integration-img--wsp">
+            <img src="Imagenes/logosap.png" alt="" class="ai-support__integration-img ai-support__integration-img--sap">
+            <img src="Imagenes/logogoogle.webp" alt="" class="ai-support__integration-img">
+            <img src="Imagenes/logogooglecalendar.png" alt="" class="ai-support__integration-img">
+            <img src="Imagenes/logoout.png" alt="" class="ai-support__integration-img">
+          </div>
+        </div>
       </div>
+      <h2 class="ai-support__title">Conecta las herramientas que ya usas</h2>
+      <p class="ai-support__text">Integra tu ERP y las plataformas que tu equipo ya utiliza día a día para centralizar la atención sin cambiar tu forma de trabajar.</p>
+    </div>
+    </div>
+    </div>
     </div>
   </section>
 
