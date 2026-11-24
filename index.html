@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PostBuild — Gestiona la postventa con IA</title>
   <meta name="description" content="PostBuild automatiza y resuelve la atención de postventa de viviendas para el propietario final, usando inteligencia artificial.">
+  <link rel="icon" type="image/svg+xml" href="Imagenes/PostBuild_logo_fondo_blanco.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
@@ -20,11 +21,11 @@
       <a href="#producto">Producto</a>
       <a href="#nosotros">Nosotros</a>
       <a href="https://postbuild-app.vercel.app/login" class="navbar__login navbar__login--mobile">Iniciar sesión</a>
-      <a href="waitlist.html" class="navbar__cta navbar__cta--mobile">Lista de espera</a>
+      <a href="waitlist.html" class="navbar__cta navbar__cta--mobile">Agendar demo</a>
     </nav>
     <div class="navbar__actions navbar__actions--desktop">
       <a href="https://postbuild-app.vercel.app/login" class="navbar__login">Iniciar sesión</a>
-      <a href="waitlist.html" class="navbar__cta">Lista de espera</a>
+      <a href="waitlist.html" class="navbar__cta">Agendar demo</a>
     </div>
     <button class="navbar__toggle" id="navbar-toggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span>
@@ -35,9 +36,9 @@
 
   <section class="hero">
     <div class="hero__content">
-      <p class="hero__title">Gestiona la atención a tus propietarios con <span class="accent">IA</span></p>
+      <p class="hero__title">Gestiona la postventa de viviendas con <span class="accent">agentes IA</span></p>
       <div class="hero__actions">
-        <a href="waitlist.html" class="hero__cta">Lista de espera</a>
+        <a href="waitlist.html" class="hero__cta">Agendar demo</a>
         <a href="#nosotros" class="hero__cta hero__cta--secondary">Ver documentación</a>
         <div class="hero__video" id="hero-video-wrapper">
           <video src="Imagenes/videopostbuild.mp4" id="hero-video" loop playsinline></video>
@@ -367,7 +368,8 @@
         <div class="news-grid__track">
           <div class="news-grid__set">
             <article class="news-grid__card news-grid__card--featured">
-              <h3 class="news-grid__title">PostBuild × Constructora DAG</h3>
+              <img src="Imagenes/proyectodag.png" alt="Proyecto Constructora DAG" class="news-grid__photo">
+              <span class="news-grid__tag">Alianza</span>
               <div class="news-grid__brands" aria-hidden="true">
                 <img src="Imagenes/PostBuild_logotipo_fondo_blanco.svg" alt="" class="news-grid__brand-logo">
                 <span class="news-grid__brand-x">×</span>
@@ -375,18 +377,20 @@
               </div>
               <p class="news-grid__text">Alianza con Constructora DAG para crear una solución de postventa a medida para construcción.</p>
             </article>
-            <article class="news-grid__card news-grid__card--placeholder">
-              <span class="news-grid__tag news-grid__tag--muted">Próximamente</span>
-              <h3 class="news-grid__title news-grid__title--muted">Nueva noticia</h3>
-            </article>
-            <article class="news-grid__card news-grid__card--placeholder">
-              <span class="news-grid__tag news-grid__tag--muted">Próximamente</span>
-              <h3 class="news-grid__title news-grid__title--muted">Nueva noticia</h3>
+            <article class="news-grid__card news-grid__card--featured">
+              <div class="news-grid__photo-wrap">
+                <img src="Imagenes/fotoetm.png" alt="Equipo PostBuild en el ETM Day 2026" class="news-grid__photo">
+                <img src="Imagenes/logoetm2026.png" alt="ETM Day 2026" class="news-grid__event-logo">
+              </div>
+              <span class="news-grid__tag">Evento</span>
+              <h3 class="news-grid__title">Estuvimos presentes en el ETM Day 2026</h3>
+              <p class="news-grid__text">PostBuild participó en el ETM Day 2026, compartiendo con la industria nuestra solución de postventa para construcción.</p>
             </article>
           </div>
           <div class="news-grid__set" aria-hidden="true">
             <article class="news-grid__card news-grid__card--featured">
-              <h3 class="news-grid__title">PostBuild × Constructora DAG</h3>
+              <img src="Imagenes/proyectodag.png" alt="Proyecto Constructora DAG" class="news-grid__photo">
+              <span class="news-grid__tag">Alianza</span>
               <div class="news-grid__brands" aria-hidden="true">
                 <img src="Imagenes/PostBuild_logotipo_fondo_blanco.svg" alt="" class="news-grid__brand-logo">
                 <span class="news-grid__brand-x">×</span>
@@ -394,13 +398,14 @@
               </div>
               <p class="news-grid__text">Alianza con Constructora DAG para crear una solución de postventa a medida para construcción.</p>
             </article>
-            <article class="news-grid__card news-grid__card--placeholder">
-              <span class="news-grid__tag news-grid__tag--muted">Próximamente</span>
-              <h3 class="news-grid__title news-grid__title--muted">Nueva noticia</h3>
-            </article>
-            <article class="news-grid__card news-grid__card--placeholder">
-              <span class="news-grid__tag news-grid__tag--muted">Próximamente</span>
-              <h3 class="news-grid__title news-grid__title--muted">Nueva noticia</h3>
+            <article class="news-grid__card news-grid__card--featured">
+              <div class="news-grid__photo-wrap">
+                <img src="Imagenes/fotoetm.png" alt="Equipo PostBuild en el ETM Day 2026" class="news-grid__photo">
+                <img src="Imagenes/logoetm2026.png" alt="ETM Day 2026" class="news-grid__event-logo">
+              </div>
+              <span class="news-grid__tag">Evento</span>
+              <h3 class="news-grid__title">Estuvimos presentes en el ETM Day 2026</h3>
+              <p class="news-grid__text">PostBuild participó en el ETM Day 2026, compartiendo con la industria nuestra solución de postventa para construcción.</p>
             </article>
           </div>
         </div>
