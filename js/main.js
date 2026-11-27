@@ -18,28 +18,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const heroVideo = document.getElementById('hero-video');
-  const heroVideoToggle = document.getElementById('hero-video-toggle');
-
-  if (heroVideo && heroVideoToggle) {
-    heroVideoToggle.addEventListener('click', () => {
-      if (heroVideo.paused) {
-        heroVideo.play();
-      } else {
-        heroVideo.pause();
-      }
-    });
-
-    heroVideo.addEventListener('play', () => {
-      heroVideoToggle.classList.remove('is-paused');
-      heroVideoToggle.setAttribute('aria-label', 'Pausar video');
-    });
-
-    heroVideo.addEventListener('pause', () => {
-      heroVideoToggle.classList.add('is-paused');
-      heroVideoToggle.setAttribute('aria-label', 'Reproducir video');
-    });
-  }
-
 });
 
